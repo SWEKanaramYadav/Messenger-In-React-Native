@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bhawkaenterprises-staging-82547-authRole",
+      "UnauthRoleArn": "arn:aws:iam::139174666827:role/amplify-bhawkaenterprises-staging-82547-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::139174666827:role/amplify-bhawkaenterprises-staging-82547-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-bhawkaenterprises-staging-82547-deployment",
+      "UnauthRoleName": "amplify-bhawkaenterprises-staging-82547-unauthRole",
+      "StackName": "amplify-bhawkaenterprises-staging-82547",
+      "StackId": "arn:aws:cloudformation:ap-south-1:139174666827:stack/amplify-bhawkaenterprises-staging-82547/917cd900-8364-11ed-93e2-0abca92d38c6",
+      "AmplifyAppId": "d20v1gccls51pt"
+    }
+  },
+  "auth": {
+    "BhawkaEnterprises": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "PREFERRED_USERNAME",
+          "EMAIL",
+          "NAME"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 6,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-bhawkaenterprises-staging-82547-deployment/amplify-cfn-templates/auth/BhawkaEnterprises-cloudformation-template.json",
+        "logicalId": "authBhawkaEnterprises"
+      },
+      "lastPushTimeStamp": "2022-12-24T08:58:12.699Z",
+      "output": {
+        "UserPoolId": "ap-south-1_OqnlNLAC6",
+        "AppClientIDWeb": "mc0c0efg7gc3mc8v8uki8ao66",
+        "AppClientID": "3fvg84n6nkc7eqvjcdejgm4dgs",
+        "IdentityPoolId": "ap-south-1:4d46ecce-4871-43e4-b6d5-c6b9e783018b",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-south-1:139174666827:userpool/ap-south-1_OqnlNLAC6",
+        "IdentityPoolName": "testAuthIdentityPool__staging",
+        "UserPoolName": "BhawkaEnterprises"
+      },
+      "lastPushDirHash": "veUd/7HRdqcPiKh8sXBhLBXFeyM="
+    }
+  }
+}

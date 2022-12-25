@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bhawkaenterprises-staging-82547-authRole",
+      "UnauthRoleArn": "arn:aws:iam::139174666827:role/amplify-bhawkaenterprises-staging-82547-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::139174666827:role/amplify-bhawkaenterprises-staging-82547-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-bhawkaenterprises-staging-82547-deployment",
+      "UnauthRoleName": "amplify-bhawkaenterprises-staging-82547-unauthRole",
+      "StackName": "amplify-bhawkaenterprises-staging-82547",
+      "StackId": "arn:aws:cloudformation:ap-south-1:139174666827:stack/amplify-bhawkaenterprises-staging-82547/917cd900-8364-11ed-93e2-0abca92d38c6",
+      "AmplifyAppId": "d20v1gccls51pt"
+    },
+    "categories": {
+      "auth": {
+        "BhawkaEnterprises": {}
+      }
+    }
+  }
+}
