@@ -11,21 +11,21 @@ const ChatListItem = ({chat}) => {
     <View style={styles.container}>
       <Image
         source={{
-          uri: chat.user.image,
+          uri: chat?.user?.image,
         }}
         style={styles.image}
       />
       <View style={styles.content}>
         <View style={styles.row}>
           <Text numberOfLines={1} style={styles.name}>
-            {chat.user.name}
+            {chat?.user?.name}
           </Text>
           <Text style={styles.subTitle}>
-            {dayjs(chat.lastMessage.createdAt).fromNow(true)}
+            {dayjs(chat?.lastMessage?.createdAt).fromNow(true)}
           </Text>
         </View>
         <Text numberOfLines={2} style={styles.subTitle}>
-          {chat.lastMessage.text}
+          {chat?.lastMessage?.text}
         </Text>
       </View>
     </View>
