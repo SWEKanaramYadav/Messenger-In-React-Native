@@ -1,11 +1,11 @@
-import {View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
 dayjs.extend(relativeTime);
 
-const Message = ({message}) => {
+const Message = ({ message }) => {
   const isMyMessage = () => {
     return message?.user?.id === 'u1';
   };

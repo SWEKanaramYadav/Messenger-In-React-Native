@@ -7,9 +7,9 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import Navigation from './src/navigation';
-import {Amplify} from 'aws-amplify';
+import { Amplify } from 'aws-amplify';
 import config from './src/aws-exports';
 import ChatsScreen from './src/screens/ChatsScreen/ChatsScreen';
 import ChatScreen from './src/screens/ChatsScreen/ChatScreen';
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'whitesmoke',
     justifyContent: 'center',
-    // paddingVertical: 20,
+    // paddingVertical: 10,
   },
 });
 
