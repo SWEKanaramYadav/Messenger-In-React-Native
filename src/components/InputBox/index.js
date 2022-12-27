@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const InputBox = () => {
   const [newMessage, setNewMessage] = useState('');
@@ -12,7 +13,7 @@ const InputBox = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView edges={['bottom']} style={styles.container}>
       {/*  Icon */}
       <MaterialIcons name="add" size={24} color="royalblue" />
       {/* Text Input */}
@@ -32,7 +33,7 @@ const InputBox = () => {
         size={24}
         color="white"
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,74 +1,28 @@
-import React, {useEffect, useState} from 'react';
-import {View, ActivityIndicator} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import SignInScreen from '../screens/SignInScreen';
-import SignUpScreen from '../screens/SignUpScreen';
-import ConfirmEmailScreen from '../screens/ConfirmEmailScreen';
-import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
-import NewPasswordScreen from '../screens/NewPasswordScreen';
-import HomeScreen from '../screens/HomeScreen';
-import {Auth, Hub} from 'aws-amplify';
+import React, { useEffect, useState } from 'react';
+import { View, ActivityIndicator } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Auth, Hub } from 'aws-amplify';
+import ChatScreen from '../screens/ChatScreen/ChatScreen';
+import ChatsScreen from '../screens/ChatsScreen/ChatsScreen';
+import MainTabNavigator from './MainTabNavigator';
 
 const Stack = createNativeStackNavigator();
 
-const Navigation = () => {
-  const [user, setUser] = useState(undefined);
-
-  const checkUser = async () => {
-    try {
-      const authUser = await Auth.currentAuthenticatedUser({bypassCache: true});
-      // console.log("authUser",authUser);
-      setUser(authUser);
-    } catch (e) {
-      setUser(null);
-    }
-  };
-
-  useEffect(() => {
-    checkUser();
-  }, []);
-
-  useEffect(() => {
-    const listener = data => {
-      // console.log("Data", data);
-      if (data.payload.event === 'signIn' || data.payload.event === 'signOut') {
-        checkUser();
-      }
-    };
-
-    Hub.listen('auth', listener);
-    return () => Hub.remove('auth', listener);
-    // const hubListenerCancelToken = Hub.listen('auth', listener);
-    // return () => hubListenerCancelToken();
-  }, []);
-
-  if (user === undefined) {
-    return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <ActivityIndicator />
-      </View>
-    );
-  }
-
+const Navigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        {user ? (
-          <Stack.Screen name="Home" component={HomeScreen} />
-        ) : (
-          <>
-            <Stack.Screen name="SignIn" component={SignInScreen} />
-            <Stack.Screen name="SignUp" component={SignUpScreen} />
-            <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
-            <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-            <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
-          </>
-        )}
+      <Stack.Navigator
+        screenOptions={{ headerStyle: { backgroundColor: 'whitesmoke' } }}>
+        <Stack.Screen
+          name="Home"
+          component={MainTabNavigator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Chat" component={ChatScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
-export default Navigation;
+export default Navigator;

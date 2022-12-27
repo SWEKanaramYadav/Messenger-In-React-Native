@@ -8,12 +8,9 @@
 
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import Navigation from './src/navigation';
+import Navigator from './src/navigation';
 import { Amplify } from 'aws-amplify';
 import config from './src/aws-exports';
-import ChatsScreen from './src/screens/ChatsScreen/ChatsScreen';
-import ChatScreen from './src/screens/ChatsScreen/ChatScreen';
-ChatsScreen;
 
 Amplify.configure(config);
 
@@ -21,13 +18,12 @@ const App = () => {
   // Auth.signOut();
 
   return (
-    // <SafeAreaView style={styles.root}>
-    //   <Navigation />
+    // <SafeAreaView style={styles.container}>
+    //   <Navigator />
     // </SafeAreaView>
     <View style={styles.container}>
-      {/* <ChatsScreen /> */}
-      <ChatScreen />
-      <StatusBar barStyle={'default'} />
+      <Navigator />
+      {/* <StatusBar barStyle={'default'} /> */}
     </View>
   );
 };
